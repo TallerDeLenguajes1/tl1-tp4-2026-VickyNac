@@ -38,6 +38,12 @@ Nodo *Siguiente;
 
     void CrearTarea(Tarea Tarea,int aux){
         Nodo*Ntarea=(Nodo*) malloc (sizeof(Nodo));
-        Nodo->Tarea->TareaID=aux;
+        
+        Ntarea->T->TareaID=aux;
+        Ntarea->T->descripcion;//corregir no se si funciona
+        Ntarea->T->Duracion;//hacer funcion rand
+
+
+        Ntarea->Siguiente=NULL;
     };
           
