@@ -8,18 +8,19 @@ typedef struct Tarea{
 } Tarea;
 
 typedef struct Nodo{
-Tarea T;
+struct Tarea T;
 Nodo *Siguiente;
 }Nodo;
 
     Nodo *crearListaVacia();
-    void CrearTarea(Tarea Tarea, int aux);
+    void CrearTarea(Tarea Tarea, int aux, char descri);
 
 
 
 
             int main(){
                 int auxID=1000;
+
                 Nodo *TareasPendientes = crearListaVacia;
                 Nodo *TareasRealizadas = crearListaVacia;
 
@@ -36,12 +37,14 @@ Nodo *Siguiente;
        return NULL;
     };
 
-    void CrearTarea(Tarea Tarea,int aux){
+    void CrearTarea(Tarea Tarea,int aux, char descri){
         Nodo*Ntarea=(Nodo*) malloc (sizeof(Nodo));
         
-        Ntarea->T->TareaID=aux;
-        Ntarea->T->descripcion;//corregir no se si funciona
-        Ntarea->T->Duracion;//hacer funcion rand
+        Ntarea->T.TareaID=aux;
+
+        Ntarea->T.descripcion = descri;
+      
+        Ntarea->T.Duracion = rand() % 5, rand() % 5; 
 
 
         Ntarea->Siguiente=NULL;
