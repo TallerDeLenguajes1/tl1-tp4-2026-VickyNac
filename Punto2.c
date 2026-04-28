@@ -20,12 +20,14 @@ Nodo *Siguiente;
 
             int main(){
                 int auxID=1000;
+                
 
                 Nodo *TareasPendientes = crearListaVacia;
                 Nodo *TareasRealizadas = crearListaVacia;
 
-
-
+                  char descri[50];
+                 scanf("%s", descri);
+                
 
 
 
@@ -44,7 +46,7 @@ Nodo *Siguiente;
 
         Ntarea->T.descripcion = descri;
       
-        Ntarea->T.Duracion = rand() % 5, rand() % 5; 
+        Ntarea->T.Duracion = (rand() % 100)+10; //da un numero aletaorio entre 10 y 100
 
 
         Ntarea->Siguiente=NULL;
